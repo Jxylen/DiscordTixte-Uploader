@@ -1,0 +1,19 @@
+{
+  "name": "cdn-tixie-uploader",
+  "version": "1.0.0",
+  "description": "just a casual uploader from a discord channel to tixte!",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jaylen",
+  "license": "ISC",
+  "dependencies": {
+    "ascii-table": "^0.0.9",
+    "discord.js": "^14.15.3",
+    "dotenv": "^16.4.5",
+    "fs": "^0.0.1-security",
+    "node-fetch": "^3.3.2",
+    "path": "^0.12.7"
+  }
+}
