@@ -56,7 +56,7 @@ module.exports = {
       
       // React with checkmark and reply with success message
       await message.react('✅');
-      await message.reply(`[\`${newFilename}\`](${jsonResponse.data.url}) uploaded successfully.`);
+      await message.reply(`[${newFilename}](${jsonResponse.data.url}) uploaded successfully.`);
     } catch (error) {
       console.error(`Error uploading ${newFilename}:`, error);
       await message.react('❌');
