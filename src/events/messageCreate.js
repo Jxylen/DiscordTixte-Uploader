@@ -1,4 +1,5 @@
 const { Events, Client, Message } = require("discord.js");
+const uploadDomain = "cdn.jaylen.nyc" // Change this to the domain you want to upload this with
 
 module.exports = {
   name: Events.MessageCreate,
@@ -8,7 +9,7 @@ module.exports = {
    * @param {Client} client - The client instance
    */
   async execute(message, client) {
-    const fetch = (await import('node-fetch')).default; // Import node-fetch and use default export
+    const fetch = (await import('node-fetch')).default;
 
     // Check if the message has attachments or is a specific command
     if (message.attachments.size === 0 && message.content !== "<@1262217161317814394>") return;
@@ -22,7 +23,7 @@ module.exports = {
 
     const form = new FormData();
     const payloadJson = JSON.stringify({
-      domain: "cdn.jaylen.nyc",
+      domain: uploadDomain,
       name: newFilename
     });
 
