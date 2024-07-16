@@ -7,7 +7,6 @@
 
 1. [Discord Bot Token](https://discord.com/developers/applications)
    1.1. Enable `Message Content Intent` in Discord Developer Portal
-2. Node.js 16.11.0 or newer
 3. A [Tixte Account](https://tixte.com)
 
 ## 🚀 Getting Started
