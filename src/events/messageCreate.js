@@ -6,9 +6,8 @@ module.exports = {
   /**
    * 
    * @param {Message} message - The message instance
-   * @param {Client} client - The client instance
    */
-  async execute(message, client) {
+  async execute(message) {
     const fetch = (await import('node-fetch')).default;
 
     // Check if the message has attachments or is a specific command
