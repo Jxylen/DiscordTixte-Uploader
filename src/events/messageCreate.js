@@ -1,4 +1,4 @@
-const { Events, Client, Message } = require("discord.js");
+const { Events, Message } = require("discord.js");
 const uploadDomain = "cdn.jaylen.nyc" // Change this to the domain you want to upload this with
 
 module.exports = {
@@ -16,7 +16,7 @@ module.exports = {
     const attachment = message.attachments.first();
     if (!attachment || !attachment.name.match(/\.(jpg|jpeg|png|gif|mp4)$/i)) return;
 
-    // Extract the second word from the message content
+    // Extract the second word from the message content and will set it as a title IF there is one.
     const words = message.content.split(/\s+/);
     const newFilename = words.length >= 2 ? words[1] + attachment.name.slice(attachment.name.lastIndexOf('.')) : attachment.name;
 
@@ -60,7 +60,6 @@ module.exports = {
     } catch (error) {
       console.error(`Error uploading ${newFilename}:`, error);
       await message.react('❌');
-      await message.reply(`Error uploading \`${newFilename}\`: ${error.message}`);
     }
   },
 };
