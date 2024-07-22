@@ -7,11 +7,12 @@ module.exports = {
    * 
    * @param {Message} message - The message instance
    */
-  async execute(message) {
+  async execute(message, client) {
     const fetch = (await import('node-fetch')).default;
 
     // Check if the message has attachments or is a specific command
-    if (message.attachments.size === 0 && message.content !== "<@1262217161317814394>") return;
+    if (message.attachments.size === 0) return;
+    if (!message.mentions.has(client.user) && message.content !== "<@1262217161317814394>") return;
 
     const attachment = message.attachments.first();
     if (!attachment || !attachment.name.match(/\.(jpg|jpeg|png|gif|mp4)$/i)) return;
